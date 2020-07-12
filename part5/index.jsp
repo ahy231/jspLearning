@@ -100,3 +100,23 @@
 </jsp:element>
 </body>
 </html>
+
+<jsp:text/>
+<%-- text动作元素允许在jsp页面和文档中使用写入文本的模板，语法格式如下: --%>
+<jsp:text>模板数据</jsp:text>
+<%-- 以上文本模板不能包含重复元素，之恶能包含文本和EL表达式。请注意，在XML文件中，您不能使用表达式如${whatever>0}，因为>符号是非法的。你可以使用${whatever gt 0}表达式或者嵌入在一个CDATA部分 --%>
+<jsp:text><![CDATA[<br>]]></jsp:text>
+<%-- 如果你需要在XHTML中声明DOCTYPE，必须使用到<jsp:text>动作元素，实例如下: --%>
+<jsp:text><![CDATA[<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"DTD/xhtml1-strict.dtd">]]>
+</jsp:text>
+<head><title>jsp:text action</title></head>
+<body>
+
+<books><book><jsp:text>  
+    Welcome to JSP Programming
+</jsp:text></book></books>
+
+</body>
+</html>
